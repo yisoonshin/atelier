@@ -4,7 +4,7 @@
 # basic args check
 if [ $# -lt 2 ]
 then
-    echo 'Usage: ./jwt_HS256.sh [existing token] [public key (public.pem]'
+    echo 'Usage: ./jwt_HS256.sh [existing token] [public key (public.pem)]'
     exit 1
 fi
 
