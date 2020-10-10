@@ -1,0 +1,108 @@
+
+/* pull local fonts */
+@font-face {
+    font-family: 'caslon-antique';
+    src: url("content/Caslon_Antique_Bold.woff");
+}
+
+/* page margins */
+body
+{
+    margin: 30px 60px 30px 60px;
+    font-family: georgia;
+}
+
+/* div margins */
+div
+{
+    margin: 25px 0px;
+}
+
+
+/* base navigation bar styling */
+.nav
+{
+    list-style-type: none;
+    margin: 20px 0px 0px 0px;
+}
+
+/* navigation bar styling */
+.nav a {
+  float: left;
+  color: #203a46;
+  text-align: center;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'caslon-antique';
+}
+
+/* nav bar hover color */
+.nav a:hover {
+  background-color: #d7c58c;
+}
+
+/* active tab color */
+.nav a.active {
+  background-color: #2e4955;
+  color: #d7c58c;
+}
+
+/* secret tab styling */
+#secret
+{
+  color: white;
+}
+
+#secret:hover
+{
+  color: white;
+  background-color: white;
+}
+
+h1
+{
+  font-family: 'caslon-antique';
+  color: #203a46;
+  font-size: 56px;
+}
+
+p
+{
+  font-size: 14px;
+}
+
+blockquote
+{
+  white-space: pre-wrap;
+  font-size: 18px;
+  color: #2e4955;
+}
+
+img
+{
+  max-width:100%;
+  height:auto;
+  padding: 20px 0px;
+}
+
+
+th
+{
+  font-family: 'caslon-antique';
+  font-size: 20px;
+  background-color: #2e4955;
+  color: #d7c58c;
+  padding: 15px 20px;
+}
+
+td
+{
+  padding: 10px 20px;
+}
+
+/* alternating colored rows */
+tbody tr:nth-child(odd)
+{
+  background-color: #dcd5c5;
+}

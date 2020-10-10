@@ -1,0 +1,4 @@
+# Hide my identity
+User-agent: *
+Disallow: /secret
+Disallow: /goodjob.txt
