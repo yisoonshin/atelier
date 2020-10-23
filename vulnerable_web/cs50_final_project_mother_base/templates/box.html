@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}
+    Shibboleth
+{% endblock %}
+{% block main %}
+    <h2>Who Are The Patriots?</h2>
+    <br></br>
+    <div>
+        <img src="static/patriots.jpg" class="img-fluid" alt="The Patriots">
+    </div>
+    <br></br>
+    <form action="/box" method="post">
+        <div class="form-group">
+            <p>IYKYK. Answer carefully or you will get booted.</p>
+            <input class="form-control" name="passcode" placeholder="Illuminati" type="password" id="passcode">
+        </div>
+        <button class="btn btn-primary" type="submit" id="code_submit" disable>Submit</button>
+        <!-- client-side check for input -->
+        <script>
+        document.querySelector('#passcode').onkeyup = function() {
+            if (document.querySelector('#passcode').value === '') {
+                document.querySelector('#code_submit').disabled = true;
+            }
+            else {
+                document.querySelector('#code_submit').disabled = false;
+            }
+        }
+        </script>
+    </form>
+{% endblock %}

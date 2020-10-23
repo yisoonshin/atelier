@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block title %}
+    Command Center
+{% endblock %}
+{% block main %}
+    <h1><strong>Command Center</strong></h1>
+    <img src="{{url_for('static', filename='skullface.png')}}" class="img-fluid" alt="pwned">
+    <br></br>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+              <a href="/headcount">
+                <img class="card-img-top" src="{{url_for('static', filename='headcount.jpg')}}" alt="Headcount">
+              </a>
+              <div class="card-body">
+                <a href="/headcount" class="stretched-link">
+                    <h5 class="card-title"><strong>Headcount</strong></h5>
+                </a>
+                <p class="card-text">Take inventory of our troops.</p>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card">
+              <a href="/provision">
+                <img class="card-img-top" src="{{url_for('static', filename='provision.jpg')}}" alt="Account Provisioning">
+              </a>
+              <div class="card-body">
+                <a href="/provision" class="stretched-link">
+                    <h5 class="card-title"><strong>Account Provisioning</strong></h5>
+                </a>
+                <p class="card-text">Create accounts for new recruits.</p>
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+              <a href="/create_missions">
+                <img class="card-img-top" src="{{url_for('static', filename='missions.jpg')}}" alt="Mission Control">
+              </a>
+              <div class="card-body">
+                <a href="/create_missions" class="stretched-link">
+                    <h5 class="card-title"><strong>Create Missions</strong></h5>
+                </a>
+                <p class="card-text">Give them some work to do.</p>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card">
+              <a href="/jukebox">
+                <img class="card-img-top" src="{{url_for('static', filename='mixtape.jpg')}}" alt="Jukebox">
+              </a>
+              <div class="card-body">
+                <a href="/jukebox" class="stretched-link">
+                    <h5 class="card-title"><strong>Jukebox</strong></h5>
+                </a>
+                <p class="card-text">For officers' recreational use only.</p>
+              </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

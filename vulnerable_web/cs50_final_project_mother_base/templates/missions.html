@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}
+    Missions
+{% endblock %}
+{% block main %}
+    <h2>Missions Available</h2>
+    {% if flag %}
+        <p> {{ flag }} </p>
+    {% endif %}
+    <br></br>
+    {% for mission in missions %}
+        <div class="card">
+          <div class="card-header bold-cardheader">
+            <strong style="color: rgba(25, 70, 91, .95);">{{ mission["headline"] }}</strong>
+          </div>
+          <div class="card-body">
+            <p><strong class="pink">Requested By: </strong>{{ mission["requester"] }}</p>
+            <p><strong class="pink">Posted On: </strong>{{ mission["posted_at"] }}</p>
+            <p><strong class="pink">Payout: </strong> ${{ mission["payout"] }}</p>
+            <blockquote class="blockquote mb-0">
+                {% autoescape false %}
+                <p>{{ mission["details"] }}</p>
+                {% endautoescape %}
+            </blockquote>
+          </div>
+        </div>
+    <br></br>
+    {% endfor %}
+{% endblock %}

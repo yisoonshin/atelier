@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Headcount
+{% endblock %}
+
+{% block main %}
+    <img src="{{url_for('static', filename='headcount.jpg')}}" class="img-fluid" alt="new friends">
+    <br></br>
+
+    <h2>Our Current Roster</h2>
+
+    <nav class="navbar navbar-dark">
+        <label>Search by role, username, or email</label>
+        <form class="form-inline" action="/headcount" method="post">
+            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+
+    <table class="table">
+        <thead class="thead-idroid">
+            <tr>
+                <th scope="col">Role</th>
+                <th scope="col">Id</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        {% if rows %}
+        <tbody class="table table-striped">
+            {% for row in rows %}
+            <tr>
+                <td>{{ row["role"] }}</td>
+                <td>{{ row["id"] }}</td>
+                <td>{{ row["username"] }}</td>
+                <td>{{ row["email"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        {% else %}
+        <p>No users found</p>
+        {% endif %}
+    </table>
+    <br></br>
+    {% if flag %}
+        <p> {{ flag }} </p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}
+    Password Reset
+{% endblock %}
+{% block main %}
+    <h2>Password Reset</h2>
+    <form action="/pw_reset" method="post">
+        <div class="form-group">
+            <p>Please use at least 6 characters - we don't want Cipher getting in!</p>
+            <input class="form-control" name="new_password" placeholder="New Password" type="password" id="new_pw">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="pw_confirm" placeholder="Confirm New Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit" id="reset" disable>Reset</button>
+        <!-- client-side check for input -->
+        <script>
+        document.querySelector('#new_pw').onkeyup = function() {
+            if (document.querySelector('#new_pw').value === '') {
+                document.querySelector('#reset').disabled = true;
+            }
+            else {
+                document.querySelector('#reset').disabled = false;
+            }
+        }
+        </script>
+    </form>
+    {% if error_msg %}
+        <p style="color: red"> {{ error_msg }} </p>
+    {% endif %}
+    {% if success %}
+        <p style="color: green"> {{ success }} </p>
+    {% endif %}
+    </form>
+{% endblock %}

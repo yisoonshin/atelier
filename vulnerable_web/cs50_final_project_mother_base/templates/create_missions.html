@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block title %}
+    Mission Central
+{% endblock %}
+{% block main %}
+    <h2>Mission Central</h2>
+    <br></br>
+    {% if error_msg %}
+        <p style="color: red"> {{ error_msg }} </p>
+    {% endif %}
+    {% if success %}
+        <p style="color: green"> {{ success }} </p>
+    {% endif %}
+    <form action="/create_missions" method="post">
+        <div class="form-group">
+            <input class="form-control" name="mission_headline" placeholder="Mission Headline" type="text" id="headline">
+        </div>
+        <div class="form-group">
+            <label for="message_payout">How much will it pay? (float/int only)</label>
+            <input class="form-control" name="mission_payout" value="1337" type="number" id="payout" min="0">
+        </div>
+        <div class="form-group">
+            <label for="mission_details">Describe the mission and provide relevant details. (3k char limit):</label>
+            <textarea class="form-control" name="mission_details" id="details" rows="5"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" name="create_mission" id="create" disabled>Create</button>
+
+        <!-- client-side check for input -->
+        <script>
+        document.querySelector('#headline').onkeyup = function() {
+            if (document.querySelector('#headline').value === '') {
+                document.querySelector('#create').disabled = true;
+            }
+            else {
+                document.querySelector('#create').disabled = false;
+            }
+        }
+
+        document.querySelector('#details').onkeyup = function() {
+            if (document.querySelector('#details').value === '') {
+                document.querySelector('#create').disabled = true;
+            }
+            else {
+                document.querySelector('#create').disabled = false;
+            }
+        }
+        </script>
+    </form>
+{% endblock %}
